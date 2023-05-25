@@ -1,11 +1,9 @@
 import AWS from 'aws-sdk';
+import fs from 'fs';
 
 const sourceEmail = 'test@example.com';
 
-const listRecipients = [
-  'one@example.com',
-  'two@example.com'
-]
+const listRecipients = JSON.parse(fs.readFileSync('recipients.json', 'utf8')).recipients;
 
 AWS.config.update({region: 'eu-west-1'});
 
@@ -50,9 +48,11 @@ export const handler = async (event) => {
     RawMessage: {
       Data: rawEmail
     },
-    Destinations: listRecipients,
+    Destinations: verifiedIdentities,
     Source: sourceEmail
   };
+
+  console.log("current recipients: " + verifiedIdentities);
 
   try {
     const sendRawResult = await ses.sendRawEmail(rawEmailParams).promise();

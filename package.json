@@ -10,6 +10,7 @@
   "author": "Christoph Eicke",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "^2.1381.0"
+    "aws-sdk": "^2.1381.0",
+    "fs": "^0.0.1-security"
   }
 }
