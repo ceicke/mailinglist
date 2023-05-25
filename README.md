@@ -29,7 +29,7 @@ To set up and deploy the MailingList Lambda function, follow these steps:
 
 This project uses AWS Simple Email Service (SES) for sending emails, and it requires the email addresses to be verified in SES. If an email address is not verified, the function initiates the verification process. However, the function will not send an email to the unverified email address until it's verified by the user.
 
-Also this needs to be deployed in a region where SES is able to receive e-mails.
+Please not that this needs to be deployed in a region where SES is able to receive e-mails.
 
 ## Contributing
 
