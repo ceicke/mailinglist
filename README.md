@@ -22,7 +22,7 @@ To set up and deploy the MailingList Lambda function, follow these steps:
 - Update the `sourceEmail` variables in `index.js` file with your desired source email and edit list of recipients in `recipients.json`.
 - Manually setup the Lambda function once.
 - Make sure that you have AWS CLI installed and configured on your system.
-- Update the FUNCTION_NAME (according to what you set up manually), ROLE_ARN, and REGION variables in the deploy.sh file to match your AWS Lambda function's name, the role ARN, and the region where your Lambda function is deployed respectively​3.
+- Update the `FUNCTION_NAME` (according to what you set up manually), `ROLE_ARN`, and `REGION` variables in the `deploy.sh` file to match your AWS Lambda function's name, the role ARN, and the region where your Lambda function is deployed respectively​.
 - Run the `deploy.sh` script by executing the command `./deploy.sh` in your terminal. This updates your function.
 
 ## Note
