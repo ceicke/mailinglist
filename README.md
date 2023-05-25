@@ -8,7 +8,7 @@ The main functionality of the MailingList Lambda function is to send emails to a
 
 Here's a brief overview of what the Lambda function does:
 
-- It is triggered by the creation of an S3 object, where the email content is stored.
+- It is triggered by the creation of an S3 object, where the email content is stored (this is triggered by SES).
 - The function retrieves the S3 object and prepares to send it as an email.
 - The function verifies the email addresses of the recipients.
 - If a recipient's email address is not verified, the function initiates the verification process.
@@ -19,10 +19,11 @@ Here's a brief overview of what the Lambda function does:
 
 To set up and deploy the MailingList Lambda function, follow these steps:
 
-- Update the sourceEmail and listRecipients variables in index.js file with your desired source email and list of recipients respectively.
+- Update the `sourceEmail` variables in `index.js` file with your desired source email and edit list of recipients in `recipients.json`.
+- Manually setup the Lambda function once.
 - Make sure that you have AWS CLI installed and configured on your system.
-- Update the FUNCTION_NAME, HANDLER_NAME, ROLE_ARN, and REGION variables in the deploy.sh file to match your AWS Lambda function's name, the handler name, the role ARN, and the region where your Lambda function is deployed respectively​3​.
-- Run the deploy.sh script by executing the command ./deploy.sh in your terminal.
+- Update the FUNCTION_NAME (according to what you set up manually), ROLE_ARN, and REGION variables in the deploy.sh file to match your AWS Lambda function's name, the role ARN, and the region where your Lambda function is deployed respectively​3.
+- Run the `deploy.sh` script by executing the command `./deploy.sh` in your terminal. This updates your function.
 
 ## Note
 
